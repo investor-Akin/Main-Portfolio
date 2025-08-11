@@ -28,6 +28,7 @@ body {
     margin: 0 auto;
     border-radius: 30px;
     display: flex;
+    position: fixed;
     align-items: center;
     justify-content: space-between;
     padding: 0 25px;
