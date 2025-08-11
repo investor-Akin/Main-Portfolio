@@ -10,10 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleBtn.classList.toggle('active');
     });
 
-    // Sticky Navbar on Scroll
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('sticky', window.scrollY > 0);
-    });
 
     // Active Link Highlighting
     links.forEach(link => {
