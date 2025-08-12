@@ -1,0 +1,196 @@
+
+html {
+  scroll-behavior: smooth;
+}
+.creator-section {
+    padding: 5rem 2rem;
+    background: #111;
+    background-image:
+        linear-gradient(32deg, rgba(8, 8, 8, 0.74) 30px, transparent);
+    background-size: 60px 60px;
+    background-position: -5px -5px;
+}
+
+.creator-card {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.creator-photo {
+    flex-shrink: 0;
+}
+
+.special-edge-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.main-image-circle {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 50%;
+    border: 4px solid #fe704a;
+    padding: 5px;
+}
+
+.main-image-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.decorative-circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fe704a;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle-top-right {
+    top: -5px;
+    right: 200px;
+    background-color: #ff6f4a;
+}
+
+.circle-bottom-left {
+    bottom: -5px;
+    left: 200px;
+    background-color: #fec974;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.decorative-circle:hover {
+    animation: pulse 1.5s infinite;
+}
+
+.creator-details {
+    flex: 1;
+}
+
+.creator-motto {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.creator-motto span {
+    background: linear-gradient(90deg, #3b82f6, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.creator-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #bbb;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #fe704a;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-value {
+    display: block;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.primary-btn {
+    background: #fe704a;
+    color: white;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(254, 112, 74, 0.3);
+}
+
+.outline-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.outline-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }}
+
+    

@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylee.css">
+    
 </head>
+
 <body>
     <div class="navbar-container">
         <nav class="navbar">
             <div class="navbar__brand">
-                <span class="navbar__logo">ia</span>
+                <span class="navbar__logo">IA</span>
                 <span class="navbar__tagline">INVESTOR_AKIN</span>
             </div>
 
             <div class="navbar__menu">
                 <ul class="navbar__links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#Home" class="active">Home</a></li>
+                    <li><a href="#Service">Service</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                 </ul>
                 <a href="#" class="navbar__cta">Let's Talk</a>
             </div>
@@ -34,9 +38,72 @@
     </div>
 
 
-    <section>
-        
+    <section class="creator-section" id="Home">
+        <div class="creator-card">
+            <div class="special-edge-container">
+                <div class="main-image-circle">
+                    <img src="images/AKIN.jpg" alt="Your Photo">
+
+                    <div class="decorative-circle circle-top-right"></div>
+                    <div class="decorative-circle circle-bottom-left"></div>
+                </div>
+            </div>
+
+            <div class="creator-details">
+                <h2 class="creator-motto">
+                    Get a website that will make a <span>lasting</span> impression on your audience!
+                </h2>
+
+                <p class="creator-bio">
+                    Stand out with a custom-designed site that captures your brand's essence and engages visitors from
+                    the first click. I build unique digital experiences tailored to your business goals.
+                </p>
+
+                <div class="contact-grid">
+                    <div class="contact-badge">
+                        <span class="contact-label">Name</span>
+                        <span class="contact-value">Onigbinde Akinbowale</span>
+                    </div>
+
+                    <div class="contact-badge">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">onigbindeakinbowale@gmail.com</span>
+                    </div>
+
+                    <div class="contact-badge">
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">+234 916 117 9908</span>
+                    </div>
+
+                    <div class="contact-badge">
+                        <span class="contact-label">Portfolio</span>
+                        <span class="contact-value">akinfolio.vercel.app</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="#" class="action-btn primary-btn">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Contact Me
+                    </a>
+
+                    <a href="#" class="action-btn outline-btn">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
+
+
     <script src="script.js"></script>
 </body>
+
 </html>

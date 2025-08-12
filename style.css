@@ -24,7 +24,7 @@ body {
     border-radius: 40px;
     display: flex;
     position: fixed;
-    top: 20px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -35,6 +35,7 @@ body {
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    will-change: transform;
 }
 
 .navbar__brand {
@@ -150,7 +151,7 @@ body {
 }
 
 .toggle-line {
-    width: 26px;
+    width: 30px;
     height: 2.5px;
     background-color: #333;
     transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -186,6 +187,7 @@ body {
         max-width: 1000px;
         height: 75px;
     }
+
     .navbar__links {
         gap: 28px;
     }
@@ -196,9 +198,11 @@ body {
         max-width: 900px;
         height: 70px;
     }
+
     .navbar__links {
         gap: 24px;
     }
+
     .navbar__links a {
         font-size: 15px;
     }
@@ -209,6 +213,7 @@ body {
         width: 94%;
         padding: 0 25px;
     }
+
     .navbar__menu {
         gap: 30px;
     }
@@ -218,6 +223,7 @@ body {
     body {
         padding-top: 85px;
     }
+
     .navbar {
         height: 65px;
         top: 15px;
@@ -225,6 +231,7 @@ body {
         width: 94%;
         border-radius: 35px;
     }
+
     .navbar__menu {
         position: fixed;
         top: 80px;
@@ -246,36 +253,44 @@ body {
         -webkit-backdrop-filter: blur(15px);
         transform: translateY(-20px);
     }
+
     .navbar__menu.active {
         opacity: 1;
         pointer-events: all;
         transform: translateY(0);
     }
+
     .navbar__links {
         flex-direction: column;
         align-items: center;
         gap: 24px;
         width: 100%;
     }
+
     .navbar__links a {
         font-size: 17px;
         padding: 7px 0;
     }
+
     .navbar__cta {
         margin-top: 8px;
         padding: 11px 30px;
         font-size: 16px;
     }
+
     .navbar__toggle {
         display: flex;
     }
+
     .navbar__toggle.active .toggle-line:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .navbar__toggle.active .toggle-line:nth-child(2) {
         opacity: 0;
         transform: scaleX(0);
     }
+
     .navbar__toggle.active .toggle-line:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
@@ -286,18 +301,22 @@ body {
         height: 60px;
         padding: 0 20px;
     }
+
     .navbar__logo {
         width: 35px;
         height: 35px;
         font-size: 15px;
     }
+
     .navbar__tagline {
         font-size: 15px;
     }
+
     .navbar__menu {
         top: 75px;
         padding: 25px 0;
     }
+
     .navbar__links a {
         font-size: 16px;
     }
@@ -307,28 +326,35 @@ body {
     body {
         padding-top: 80px;
     }
+
     .navbar {
         height: 58px;
         padding: 0 18px;
         width: 96%;
     }
+
     .navbar__brand {
         gap: 10px;
     }
+
     .navbar__logo {
         width: 32px;
         height: 32px;
     }
+
     .navbar__tagline {
         font-size: 14px;
     }
+
     .navbar__menu {
         width: 92%;
         padding: 22px 0;
     }
+
     .navbar__links {
         gap: 20px;
     }
+
     .navbar__cta {
         padding: 10px 28px;
     }
@@ -339,20 +365,25 @@ body {
         height: 55px;
         padding: 0 16px;
     }
+
     .navbar__logo {
         width: 30px;
         height: 30px;
         font-size: 14px;
     }
+
     .navbar__tagline {
         font-size: 13px;
     }
+
     .navbar__menu {
         top: 70px;
     }
+
     .navbar__links a {
         font-size: 15px;
     }
+
     .navbar__cta {
         font-size: 15px;
         padding: 9px 26px;
@@ -364,16 +395,20 @@ body {
         height: 52px;
         padding: 0 14px;
     }
+
     .navbar__logo {
         width: 28px;
         height: 28px;
     }
+
     .navbar__tagline {
         font-size: 12px;
     }
+
     .navbar__menu {
         padding: 20px 0;
     }
+
     .navbar__links {
         gap: 18px;
     }
