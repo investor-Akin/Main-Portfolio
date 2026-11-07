@@ -27,7 +27,7 @@ export function ScrollEffects() {
 
     if (prefersReducedMotion()) {
       // No motion at all: leave the bar empty rather than sliding it.
-      if (bar) bar.style.transform = "scaleX(0)";
+      if (bar) gsap.set(bar, { scaleX: 0 });
       return;
     }
 
@@ -88,8 +88,7 @@ export function ScrollEffects() {
     >
       <div
         ref={barRef}
-        className="h-full origin-left bg-orange"
-        style={{ transform: "scaleX(0)" }}
+        className="scroll-progress h-full origin-left bg-orange"
       />
     </div>
   );

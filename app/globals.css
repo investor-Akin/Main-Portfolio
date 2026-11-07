@@ -54,6 +54,16 @@
   will-change: opacity, transform;
 }
 
+/*
+ * Reading-progress bar. The empty state lives here, in CSS, and GSAP writes the
+ * animated value as an inline transform. Keeping it out of a React `style` prop
+ * matters: React re-applies that prop on every re-render, which would snap the
+ * bar back to zero mid-scroll.
+ */
+.scroll-progress {
+  transform: scaleX(0);
+}
+
 /* Hide the horizontal scrollbar on the testimonial track */
 .no-scrollbar {
   scrollbar-width: none;
