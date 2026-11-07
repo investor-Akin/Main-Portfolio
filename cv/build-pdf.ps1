@@ -1,6 +1,6 @@
 $chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-$root = "C:\Users\USER\Desktop\My Works\Main Portfolio\akin-site"
-$src = "file:///C:/Users/USER/Desktop/My%20Works/Main%20Portfolio/akin-site/cv/cv.html"
+$root = "C:\Users\USER\Desktop\My Works\Main Portfolio"
+$src = "file:///C:/Users/USER/Desktop/My%20Works/Main%20Portfolio/cv/cv.html"
 $out = Join-Path $root "public\akin-cv.pdf"
 
 if (Test-Path $out) { Remove-Item $out -Force }
