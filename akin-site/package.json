@@ -1,0 +1,27 @@
+{
+  "name": "akin-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "node scripts/serve-out.mjs",
+    "og": "powershell -ExecutionPolicy Bypass -File scripts/make-og.ps1",
+    "shots": "node scripts/shots-report.mjs"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "lucide-react": "^0.468.0",
+    "next": "^15.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.6.0"
+  }
+}

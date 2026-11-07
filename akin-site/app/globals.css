@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f6fbf7;
+  --color-cream-warm: #fdf3e7;
+  --color-ink: #1e1d1b;
+  --color-ink-panel: #211c22;
+  --color-ink-card: #2f3130;
+  --color-orange: #ff5821;
+  /* Small text on light backgrounds: 4.7:1 on cream. */
+  --color-orange-ink: #c9430c;
+  /* Small text on ink panels: 6.1:1 on #2f3130. */
+  --color-orange-soft: #ff9a6b;
+  --color-muted: #6b6b66;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-orange);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-orange-ink);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/*
+ * Fail open. If scripts are blocked, a crawler reads the page or an in-app
+ * browser strips JS, nothing ever sets data-visible, so the whole page would
+ * stay invisible. In that case show the content immediately.
+ */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hide the horizontal scrollbar on the testimonial track */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+\* Justified body copy: flush both edges without short ugly breaks.
+   Long words only hyphenate, and only with 3 letters either side. *\
+.justify-prose {
+  hyphens: auto;
+  -webkit-hyphenate-limit-chars: 7 3 4;
+  hyphenate-limit-chars: 7 3 4;
+}
+
+@media (min-width: 640px) {
+  .justify-prose {
+    text-align: justify;
+  }
+}
