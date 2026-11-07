@@ -33,6 +33,9 @@ no API, no environment variables needed.
 | `app/layout.tsx` | Fonts, metadata, Open Graph tags, analytics |
 | `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx` | Generated SEO files |
 | `components/` | One file per page section, plus `ui.tsx` / `reveal.tsx` shared primitives |
+| `lib/gsap.ts` | GSAP + ScrollTrigger registration, one place |
+| `components/scroll-effects.tsx` | Scroll progress bar and `data-parallax` drift |
+| `components/reveal.tsx` | Scroll-triggered entrance used by every section |
 | `public/` | Static assets served as-is: CV PDF, photos, OG image |
 | `cv/cv.html`, `cv/build-pdf.ps1` | The CV as an A4 HTML page, and the script that prints it to `public/akin-cv.pdf` |
 

@@ -41,30 +41,17 @@
   }
 }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition:
-    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 /*
- * Fail open. If scripts are blocked, a crawler reads the page or an in-app
- * browser strips JS, nothing ever sets data-visible, so the whole page would
- * stay invisible. In that case show the content immediately.
+ * Scroll reveal.
+ *
+ * GSAP owns the before/after states: it hides the element inside a layout
+ * effect, before paint, then animates it when ScrollTrigger fires. So there is
+ * nothing to hide here by default — which is what makes this fail open. If
+ * scripts are blocked, a crawler reads the page, or an in-app browser strips
+ * JS, the content is simply visible.
  */
-@media (scripting: none) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.reveal[data-visible="true"] {
-  opacity: 1;
-  transform: none;
+.reveal {
+  will-change: opacity, transform;
 }
 
 /* Hide the horizontal scrollbar on the testimonial track */

@@ -63,7 +63,7 @@ export function Hero() {
           delay={120}
           className="relative mx-auto w-full max-w-[330px] sm:max-w-[400px] lg:max-w-[460px]"
         >
-          <div className="relative">
+          <div className="relative" data-parallax="0.06">
             <div
               aria-hidden="true"
               className="absolute -right-2 -top-3 aspect-square w-[95%] rounded-full bg-orange sm:-right-4 sm:-top-5"

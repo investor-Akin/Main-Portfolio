@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { ScrollEffects } from "@/components/scroll-effects";
 import { profile, siteUrl } from "@/lib/content";
 import "./globals.css";
 
@@ -78,6 +79,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <ScrollEffects />
         <Analytics />
       </body>
     </html>
