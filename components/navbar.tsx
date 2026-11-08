@@ -97,12 +97,6 @@ export function Navbar() {
                 }`}
               >
                 {link.label}
-                <span
-                  aria-hidden="true"
-                  className={`absolute inset-x-0 -bottom-0.5 h-[2px] origin-left rounded-full bg-orange transition-transform duration-300 ease-out ${
-                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
               </a>
             );
           })}
