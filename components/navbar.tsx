@@ -7,25 +7,22 @@ import { navLinks, profile } from "@/lib/content";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [active, setActive] = useState("#home");
 
-  // Solid bar + reading progress once the page moves
+  // Solid bar once the page moves.
+  //
+  // The reading-progress hairline is NOT tracked here: it is animated by GSAP
+  // in components/scroll-effects.tsx. Driving it from React state re-rendered
+  // the whole navbar on every scroll tick, and React would then re-apply the
+  // inline transform, which is both wasteful and fights the animation.
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setScrolled(y > 8);
-      setProgress(max > 0 ? Math.min(1, Math.max(0, y / max)) : 0);
+      setScrolled(window.scrollY > 8);
     };
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   // Highlight the section currently in view
@@ -144,8 +141,8 @@ export function Navbar() {
         }`}
       >
         <div
-          className="h-full origin-left bg-orange transition-transform duration-150 ease-out"
-          style={{ transform: `scaleX(${progress})` }}
+          data-progress-bar
+          className="scroll-progress h-full origin-left bg-orange"
         />
       </div>
 

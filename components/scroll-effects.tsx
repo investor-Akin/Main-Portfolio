@@ -1,37 +1,28 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import {
-  gsap,
-  ScrollTrigger,
-  prefersReducedMotion,
-} from "@/lib/gsap";
+import { useEffect } from "react";
+import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 
 /**
  * Page-wide scroll effects that no single section owns:
  *
- * 1. A hairline reading-progress bar pinned under the header, scaled from the
- *    document's scroll position.
+ * 1. The reading-progress hairline inside the navbar. It is animated here
+ *    rather than from React state so a scroll tick never re-renders the
+ *    navbar, and so React cannot re-apply a transform over GSAP's.
  * 2. Parallax for any element carrying `data-parallax="<strength>"` — the
  *    element drifts by that fraction of the distance it has travelled through
  *    the viewport. Small numbers only; this is depth, not a slideshow.
  *
- * Everything is skipped under `prefers-reduced-motion`, and every trigger is
- * killed on unmount, so client-side navigation cannot leave a stale one behind.
+ * Both are skipped under `prefers-reduced-motion`, and every trigger is killed
+ * on unmount, so client-side navigation cannot leave a stale one behind.
  */
 export function ScrollEffects() {
-  const barRef = useRef<HTMLDivElement | null>(null);
-
   useEffect(() => {
-    const bar = barRef.current;
-
-    if (prefersReducedMotion()) {
-      // No motion at all: leave the bar empty rather than sliding it.
-      if (bar) gsap.set(bar, { scaleX: 0 });
-      return;
-    }
+    if (prefersReducedMotion()) return;
 
     const ctx = gsap.context(() => {
+      const bar = document.querySelector<HTMLElement>("[data-progress-bar]");
+
       if (bar) {
         gsap.fromTo(
           bar,
@@ -81,15 +72,5 @@ export function ScrollEffects() {
     };
   }, []);
 
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[2px] bg-transparent"
-    >
-      <div
-        ref={barRef}
-        className="scroll-progress h-full origin-left bg-orange"
-      />
-    </div>
-  );
+  return null;
 }
