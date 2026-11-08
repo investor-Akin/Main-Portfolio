@@ -84,6 +84,10 @@ export type Certification = {
 export const certifications: Certification[] = [
   {
     title: "Microsoft Office Specialist (MOS) — Word",
+    issuer: "Mia",
+  },
+  {
+    title: "Programming & Software Development",
     issuer: "New Horizons Computer Learning Centers",
   },
   {
